@@ -8,46 +8,44 @@ class MEMBRE{
 	function get_1Membre($numMemb){
 		global $db;
 
-		// select
-		// prepare
-		// execute
+		$query = 'SELECT * FROM MEMBRE WHERE numMemb = ?';
+        $result = $db->prepare($query);
+        $result->execute([$numMemb]);
 		return($result->fetch());
 	}
 
 	function get_1MembreByEmail($eMailMemb){
 		global $db;
 
-		// select
-		// prepare
-		// execute
+        $query = 'SELECT * FROM MEMBRE WHERE eMailMemb = ?';
+        $result = $db->prepare($query);
+        $result->execute([$eMailMemb]);
 		return($result->fetch());
 	}
 
 	function get_AllMembres(){
 		global $db;
 
-		// select
-		// prepare
-		// execute
+		$query = 'SELECT * FROM MEMBRE';
+        $result = $db->query($query);
+        $allMembres = $result->fetchAll();
 		return($allMembres);
 	}
 
 	function get_ExistPseudo($pseudoMemb) {
 		global $db;
 
-		// select
-		// prepare
-		// execute
+        $query = 'SELECT * FROM MEMBRE WHERE pseudoMemb = ?';
+        $result = $db->prepare($query);
+        $result->execute([$pseudoMemb]);
 		return($result->rowCount());
 	}
 
 	function get_AllMembersByStat(){
 		global $db;
 
-		// select
-		// prepare
-		// execute
-		return($allMembersByStat);
+
+        return($allMembersByStat);
 	}
 
 	function get_NbAllMembersByidStat($idStat){

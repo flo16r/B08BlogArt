@@ -16,30 +16,40 @@ require_once __DIR__ . '/../../util/ctrlSaisies.php';
 require_once __DIR__ . '/../../util/delAccents.php';
 
 // Insertion classe Statut
+require_once __DIR__ . '/../../CLASS_CRUD/statut.class.php';
 
 // Instanciation de la classe Statut
-
+$statut = new STATUT();
 
 
 
 // Ctrl CIR
 // Insertion classe User
+require_once __DIR__ . '/../../CLASS_CRUD/user.class.php';
 
 // Instanciation de la classe User
-
+$user = new USER();
 
 // Insertion classe Membre
+require_once __DIR__ . '/../../CLASS_CRUD/membre.class.php';
 
 // Instanciation de la classe Membre
+$member = new MEMBRE();
 
 
 // Gestion des erreurs de saisie
 $erreur = false;
+$errSaisies = "";
 
 // Gestion du $_SERVER["REQUEST_METHOD"] => En POST
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
+    if (isset($_POST["Submit"]) && isset($_POST['id'])) {
+        $option = $_POST["Submit"];
+        $idStat = $_POST['id'];
 
+        $FK_check = (!$member);
+    }
 
     // controle des saisies du formulaire
 

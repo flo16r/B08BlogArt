@@ -68,7 +68,7 @@ include __DIR__ . '/initStatut.php';
     <h2>Modification d'un statut</h2>
 <?php
     $id = ($_GET['id'] ?? ($_POST['id'] ?? $idStat));
-    $statutEnCours = $statut->get_1Statut(['id']);
+    $statutEnCours = $statut->get_1Statut($id);
     $libStat = $statutEnCours['libStat'];
     $idStat = $statutEnCours['idStat'];
 
